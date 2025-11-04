@@ -91,7 +91,7 @@
       gender: m
 नागा बहुफणाः सर्पास्तेषां भोगवती पुरी। सर्पो द्विरसनो व्यालो दन्दशूकः सरीसृपः ॥:
   entries:
-  - head: सर्प
+  - head: नाग
     verify: false
     gender: m
     syns:
@@ -99,11 +99,14 @@
       gender: m
     - prati: बहुफण
       gender: m
+  - head: सर्प
+    verify: false
+    syns:
     - prati: सर्प
       gender: m
     - prati: द्विरसन
       gender: m
-    - prati: ज्ञाल
+    - prati: व्याल
       gender: m
     - prati: दंष्ट्राशुक
       gender: m
