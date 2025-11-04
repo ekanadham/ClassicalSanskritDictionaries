@@ -145,6 +145,19 @@ def enrich_yaml(input_yaml, output_yaml, project_id, region):
 
         parsed = parse_sloka_with_claude(sloka, client)
 
+        # Add verify: false right after head for proofreading tracking
+        for entry in parsed.get('entries', []):
+            if 'head' in entry:
+                # Create ordered dict with verify right after head
+                new_entry = {'head': entry['head'], 'verify': False}
+                # Add remaining fields
+                for key, value in entry.items():
+                    if key != 'head':
+                        new_entry[key] = value
+                # Replace entry with ordered version
+                entry.clear()
+                entry.update(new_entry)
+
         # Store enriched data
         enriched_data[sloka] = parsed
 
